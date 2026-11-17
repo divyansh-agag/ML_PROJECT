@@ -1,0 +1,40 @@
+Stage-1 Proposal Source,Probability Fusion,Stage-1 Recall,Macro-Dice,Micro-Dice,Macro-IoU,HD95 (px),Healthy FP (px)
+Standalone U-Net++ EffNet-B3 (1-View),Standalone Stage 1 (No MedSAM),88/108 (81.5%),0.5067,0.6313,0.4056,167.26,30.2
+Standalone U-Net++ EffNet-B3 (2-View HFlip TTA),Standalone Stage 1 (No MedSAM),86/108 (79.6%),0.5146,0.639,0.4129,171.72,32.87
+Standalone U-Net++ EffNet-B3 (4-View Multi-Scale TTA),Standalone Stage 1 (No MedSAM),83/108 (76.9%),0.5087,0.6392,0.4099,193.91,19.87
+1-View EffNet-B3 (Morph),Hard Stage 2 Only (a=1.00),87/108 (80.6%),0.4486,0.5431,0.3371,176.63,77.43
+1-View EffNet-B3 (Morph),Soft Fusion (a=0.75),87/108 (80.6%),0.4558,0.5531,0.3451,176.39,74.91
+1-View EffNet-B3 (Morph),Soft Fusion (a=0.70),87/108 (80.6%),0.4579,0.5562,0.3475,176.32,74.06
+1-View EffNet-B3 (Morph),Soft Fusion (a=0.65),87/108 (80.6%),0.4609,0.5601,0.3508,176.22,73.05
+1-View EffNet-B3 (Morph),Soft Fusion (a=0.60),87/108 (80.6%),0.4646,0.5652,0.3552,176.02,71.64
+2-View TTA EffNet-B3 (Morph),Hard Stage 2 Only (a=1.00),85/108 (78.7%),0.4702,0.5664,0.3552,182.45,90.87
+2-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.75),85/108 (78.7%),0.4772,0.5761,0.3631,182.08,88.33
+2-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.70),85/108 (78.7%),0.4794,0.5791,0.3658,181.99,87.55
+2-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.65),85/108 (78.7%),0.4823,0.583,0.3691,181.91,86.47
+2-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.60),85/108 (78.7%),0.4859,0.5881,0.3734,181.77,85.0
+4-View TTA EffNet-B3 (Morph),Hard Stage 2 Only (a=1.00),83/108 (76.9%),0.4542,0.5584,0.3427,199.67,56.82
+4-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.75),83/108 (76.9%),0.4615,0.5687,0.3509,199.28,55.44
+4-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.70),83/108 (76.9%),0.4638,0.5719,0.3535,199.18,54.82
+4-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.65),83/108 (76.9%),0.4669,0.5761,0.357,199.09,54.27
+4-View TTA EffNet-B3 (Morph),Soft Fusion (a=0.60),83/108 (76.9%),0.4706,0.5816,0.3613,198.92,53.44
+YOLOv8s Only (Morph),Hard Stage 2 Only (a=1.00),34/108 (31.5%),0.2037,0.3378,0.1568,504.32,15.65
+Ensemble: EffNet-B3 (1V) U YOLO,Hard Stage 2 Only (a=1.00),88/108 (81.5%),0.456,0.5447,0.3431,170.18,93.07
+Ensemble: EffNet-B3 (1V) U YOLO,Soft Fusion (a=0.75),88/108 (81.5%),0.463,0.5544,0.351,169.92,89.87
+Ensemble: EffNet-B3 (1V) U YOLO,Soft Fusion (a=0.70),88/108 (81.5%),0.4652,0.5573,0.3534,169.83,88.88
+Ensemble: EffNet-B3 (1V) U YOLO,Soft Fusion (a=0.65),88/108 (81.5%),0.4682,0.5612,0.3568,169.71,87.63
+Ensemble: EffNet-B3 (1V) U YOLO,Soft Fusion (a=0.60),88/108 (81.5%),0.472,0.566,0.3612,169.53,85.63
+Ensemble: EffNet-B3 (2V) U YOLO,Hard Stage 2 Only (a=1.00),87/108 (80.6%),0.4766,0.5673,0.3601,169.97,106.5
+Ensemble: EffNet-B3 (2V) U YOLO,Soft Fusion (a=0.75),87/108 (80.6%),0.4835,0.5766,0.368,169.57,103.26
+Ensemble: EffNet-B3 (2V) U YOLO,Soft Fusion (a=0.70),87/108 (80.6%),0.4858,0.5795,0.3707,169.48,102.31
+Ensemble: EffNet-B3 (2V) U YOLO,Soft Fusion (a=0.65),87/108 (80.6%),0.4887,0.5833,0.3741,169.38,101.0
+Ensemble: EffNet-B3 (2V) U YOLO,Soft Fusion (a=0.60),87/108 (80.6%),0.4924,0.5882,0.3785,169.22,98.98
+Ensemble: EffNet-B3 (4V) U YOLO,Hard Stage 2 Only (a=1.00),85/108 (78.7%),0.4613,0.5606,0.3485,187.13,72.47
+Ensemble: EffNet-B3 (4V) U YOLO,Soft Fusion (a=0.75),85/108 (78.7%),0.4685,0.5705,0.3566,186.71,70.38
+Ensemble: EffNet-B3 (4V) U YOLO,Soft Fusion (a=0.70),85/108 (78.7%),0.4709,0.5737,0.3593,186.6,69.6
+Ensemble: EffNet-B3 (4V) U YOLO,Soft Fusion (a=0.65),85/108 (78.7%),0.4739,0.5778,0.3628,186.51,68.82
+Ensemble: EffNet-B3 (4V) U YOLO,Soft Fusion (a=0.60),85/108 (78.7%),0.4778,0.583,0.3672,186.33,67.44
+Ensemble: EffNet-B3 (4V) U YOLO [Fixed 9px],Hard Stage 2 Only (a=1.00),85/108 (78.7%),0.4984,0.6075,0.3929,181.77,41.88
+Ensemble: EffNet-B3 (4V) U YOLO [Fixed 9px],Soft Fusion (a=0.75),85/108 (78.7%),0.5023,0.6134,0.3976,181.88,41.32
+Ensemble: EffNet-B3 (4V) U YOLO [Fixed 9px],Soft Fusion (a=0.70),85/108 (78.7%),0.5033,0.6149,0.3987,181.81,41.21
+Ensemble: EffNet-B3 (4V) U YOLO [Fixed 9px],Soft Fusion (a=0.65),85/108 (78.7%),0.5048,0.6171,0.4006,181.71,41.02
+Ensemble: EffNet-B3 (4V) U YOLO [Fixed 9px],Soft Fusion (a=0.60),85/108 (78.7%),0.5066,0.6199,0.4028,181.65,40.52

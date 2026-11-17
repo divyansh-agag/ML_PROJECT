@@ -1,0 +1,10 @@
+FracAtlas/
+safe.ipynb
+*.py
+TODO
+*.pth
+code.ipynb
+*.pt
+FracAtlas_YOLO/
+FracAtlas_YOLO_SEG/
+FracAtlas_corrupted_backup/

@@ -1,0 +1,204 @@
+	                     
+
+=============================================================================================================================
+UNIFIED HOLD-OUT TEST BENCHMARK ACROSS ALL TRAINED MODELS (FracAtlas, N = 216, 512x512, SEED = 42)
+=============================================================================================================================
+                                     Model       Inference Mode Total Params Trainable  Fracture Dice  Fracture IoU  HD95 (px)  Healthy FP (px)  Latency (ms)
+                U-Net++ (FracAtlas_UNetPP)  Autonomous (No Box)       26.08M   100.00%         0.4017        0.3149     272.14            34.08          40.7
+U-Net++ (FracAtlas_UNetPP_Focal_Treversky)  Autonomous (No Box)       26.08M   100.00%         0.4291        0.3371     207.68            29.60          38.2
+                    YOLO (weights/best.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.1696        0.1347     553.93             0.00           7.9
+                    YOLO (weights/last.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.1670        0.1348     559.79            12.06           7.4
+                    YOLO (weights/best.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.2959        0.2363     427.81            16.19           7.9
+                  YOLO (weights/epoch0.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.1017        0.0802     619.22            13.12           8.2
+                 YOLO (weights/epoch10.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.1640        0.1293     556.41            31.17           8.4
+                 YOLO (weights/epoch15.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.1487        0.1192     562.47            17.56           8.3
+                 YOLO (weights/epoch20.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.2176        0.1733     509.60             9.17           8.4
+                 YOLO (weights/epoch25.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.2526        0.1976     455.23            16.74           8.3
+                  YOLO (weights/epoch5.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.0703        0.0574     658.13            11.31           8.3
+                    YOLO (weights/last.pt)  Autonomous YOLO-Seg       11.79M   100.00%         0.2959        0.2363     427.81            16.19           8.4
+                   Zero-Shot MedSAM (Full)  Autonomous Full Box       93.74M     0.00%         0.0084        0.0042     323.12        225255.71         281.5
+                 Zero-Shot MedSAM (Oracle) Oracle GT Box Prompt       93.74M     0.00%         0.6810        0.5268       9.58        225071.73         286.4
+                  MedSAM + LoRA (Full Box)  Autonomous Full Box       91.68M     4.75%         0.0000        0.0000     724.08             0.00          50.2
+                    U-Net++ -> MedSAM-LoRA   Autonomous Cascade       91.68M     4.75%         0.3812        0.2775     211.38           128.37          60.2
+                       YOLO -> MedSAM-LoRA   Autonomous Cascade       91.68M     4.75%         0.0553        0.0398     602.08           649.97          61.0
+                    MedSAM + LoRA (Oracle) Oracle GT Box Prompt       91.68M     4.75%         0.6941        0.5438      11.61             0.00          49.6
+                    
+                    
+                    
+                    
+                    [+] Device: cuda (NVIDIA GeForce RTX 4050 Laptop GPU) | AMP: torch.bfloat16
+[+] Stage 1 Loaded: FracAtlas_UNetPP_Focal_Treversky/Focal-Tversky + Weighted Cross-Entropy_unetpp.pt
+[+] Stage 2 Loaded: FracAtlas_MedSAM_LoRA/medsam_lora_r8_binary_best.pt | BOX_PADDING = 9 px
+z
+Comparing Normal vs 2-View vs 4-View Cascade: 100%|██████████| 216/216 [00:42<00:00,  5.13it/s]
+
+============================================================================================================================
+STAGE-1 TTA ABLATION ON TWO-STAGE CASCADE (BOX_PADDING = 9 px | FracAtlas Test N = 216 | SEED = 42)
+============================================================================================================================
+                       Cascade Variant Stage-1 Recall  Macro-Dice  Micro-Dice  Macro-IoU  HD95 (px)  Healthy FP (px)  Latency (ms)
+       Normal Cascade (1-View Stage 1) 81/108 (75.0%)      0.4174      0.5355     0.3162     208.65            97.63          81.6
+     2-View TTA Cascade (Orig + HFlip) 82/108 (75.9%)      0.4161      0.5192     0.3135     205.61            64.93         113.7
+4-View TTA Cascade (Orig+Flip+480+544) 83/108 (76.9%)      0.4371      0.5492     0.3321     197.81            77.87         183.4
+============================================================================================================================
+[+] Saved CSV comparison to: FracAtlas_MedSAM_LoRA/cascade_tta_benchmark.csv
+[+] Saved 20-scan TTA comparison grid to: FracAtlas_MedSAM_LoRA/cascade_tta_comparison_20.png
+
+
+
+/home/divyansh/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/home/divyansh/.local/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+[+] Device: cuda (NVIDIA GeForce RTX 4050 Laptop GPU) | AMP: torch.bfloat16
+[+] Stage 1 Loaded: FracAtlas_UNetPP_Focal_Treversky/Focal-Tversky + Weighted Cross-Entropy_unetpp.pt
+[+] Stage 2 Loaded: FracAtlas_MedSAM_LoRA/medsam_lora_r8_binary_best.pt | BOX_PADDING = 9 px
+Extracting Stage-1 & Stage-2 Probability Maps: 100%|██████████| 216/216 [00:39<00:00,  5.45it/s]
+
+====================================================================================================================
+CONFIDENCE-WEIGHTED PROBABILITY FUSION ABLATION (BOX_PADDING = 9 px | FracAtlas Test N = 216 | SEED = 42)
+====================================================================================================================
+  Stage-1 Proposal             Probability Fusion  Macro-Dice  Micro-Dice  Macro-IoU  HD95 (px)  Healthy FP (px)
+    1-View Stage 1 Hard Stage 2 Only (alpha=1.00)      0.4198      0.5384     0.3191     208.41            85.66
+    1-View Stage 1        Soft Blend (alpha=0.75)      0.4241      0.5447     0.3242     208.22            82.93
+    1-View Stage 1        Soft Blend (alpha=0.70)      0.4254      0.5467     0.3258     208.18            82.08
+    1-View Stage 1        Soft Blend (alpha=0.65)      0.4268      0.5488     0.3274     208.14            81.09
+    1-View Stage 1        Soft Blend (alpha=0.60)      0.4289      0.5517     0.3299     208.11            79.58
+4-View TTA Stage 1 Hard Stage 2 Only (alpha=1.00)      0.4394      0.5521     0.3339     197.61            65.42
+4-View TTA Stage 1        Soft Blend (alpha=0.75)      0.4441      0.5583     0.3394     197.47            63.38
+4-View TTA Stage 1        Soft Blend (alpha=0.70)      0.4454      0.5601     0.3409     197.40            62.64
+4-View TTA Stage 1        Soft Blend (alpha=0.65)      0.4472      0.5623     0.3431     197.27            61.82
+4-View TTA Stage 1        Soft Blend (alpha=0.60)      0.4495      0.5653     0.3458     197.17            60.75
+====================================================================================================================
+[+] Saved CSV results to: FracAtlas_MedSAM_LoRA/cascade_prob_fusion_benchmark.csv
+[+] Saved 20-scan probability fusion comparison grid to: FracAtlas_MedSAM_LoRA/cascade_prob_fusion_20.png
+
+
+
+/home/divyansh/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+/home/divyansh/.local/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+[+] Device: cuda (NVIDIA GeForce RTX 4050 Laptop GPU) | 512x512 | AMP: torch.bfloat16
+Caching Train (70%) -> RAM: 100%|██████████| 1000/1000 [00:06<00:00, 155.95it/s]
+Caching Val   (15%) -> RAM: 100%|██████████| 215/215 [00:01<00:00, 166.63it/s]
+Caching Test  (15%) -> RAM: 100%|██████████| 216/216 [00:01<00:00, 145.92it/s]
+[+] Built U-Net++ (EfficientNet-B3 + Deep Supervision) | Total Params: 13.63M
+
+[*] Starting Training -> FracAtlas_UNetPP_EfficientNetB3_DeepSup/unetpp_effnetb3_deepsup_best.pt
+
+                                                                      
+Epoch 01/40 (110.7s) | Train Loss: 0.9401 | Val Loss: 0.7416 | Bone Dice: 0.9064 | Frac Dice: 0.2588
+   --> Saved Best Model (Val Fracture Dice: 0.2588)
+                                                                      
+Epoch 02/40 (63.2s) | Train Loss: 0.5638 | Val Loss: 0.5151 | Bone Dice: 0.9326 | Frac Dice: 0.4276
+   --> Saved Best Model (Val Fracture Dice: 0.4276)
+                                                                      
+Epoch 03/40 (63.7s) | Train Loss: 0.4595 | Val Loss: 0.4361 | Bone Dice: 0.9412 | Frac Dice: 0.5133
+   --> Saved Best Model (Val Fracture Dice: 0.5133)
+                                                                      
+Epoch 04/40 (64.3s) | Train Loss: 0.4151 | Val Loss: 0.4206 | Bone Dice: 0.9405 | Frac Dice: 0.5055
+                                                                      
+Epoch 05/40 (63.8s) | Train Loss: 0.3634 | Val Loss: 0.4148 | Bone Dice: 0.9469 | Frac Dice: 0.5025
+                                                                      
+Epoch 06/40 (63.0s) | Train Loss: 0.3378 | Val Loss: 0.4033 | Bone Dice: 0.9474 | Frac Dice: 0.5339
+   --> Saved Best Model (Val Fracture Dice: 0.5339)
+                                                                      
+Epoch 07/40 (61.9s) | Train Loss: 0.3291 | Val Loss: 0.4265 | Bone Dice: 0.9194 | Frac Dice: 0.4840
+                                                                      
+Epoch 08/40 (63.3s) | Train Loss: 0.3079 | Val Loss: 0.4157 | Bone Dice: 0.9337 | Frac Dice: 0.5383
+   --> Saved Best Model (Val Fracture Dice: 0.5383)
+                                                                      
+Epoch 09/40 (62.9s) | Train Loss: 0.2926 | Val Loss: 0.3936 | Bone Dice: 0.9379 | Frac Dice: 0.5497
+   --> Saved Best Model (Val Fracture Dice: 0.5497)
+                                                                      
+Epoch 10/40 (63.8s) | Train Loss: 0.2723 | Val Loss: 0.4020 | Bone Dice: 0.9353 | Frac Dice: 0.5708
+   --> Saved Best Model (Val Fracture Dice: 0.5708)
+                                                                      
+Epoch 11/40 (64.4s) | Train Loss: 0.2905 | Val Loss: 0.3912 | Bone Dice: 0.9409 | Frac Dice: 0.5541
+                                                                      
+Epoch 12/40 (64.1s) | Train Loss: 0.2653 | Val Loss: 0.3949 | Bone Dice: 0.9431 | Frac Dice: 0.5468
+                                                                      
+Epoch 13/40 (68.4s) | Train Loss: 0.2565 | Val Loss: 0.3978 | Bone Dice: 0.9513 | Frac Dice: 0.5478
+                                                                      
+Epoch 14/40 (62.1s) | Train Loss: 0.2436 | Val Loss: 0.3988 | Bone Dice: 0.9418 | Frac Dice: 0.5227
+                                                                      
+Epoch 15/40 (63.6s) | Train Loss: 0.2346 | Val Loss: 0.3893 | Bone Dice: 0.9391 | Frac Dice: 0.5497
+                                                                      
+Epoch 16/40 (63.2s) | Train Loss: 0.2324 | Val Loss: 0.4070 | Bone Dice: 0.9524 | Frac Dice: 0.5610
+                                                                      
+Epoch 17/40 (63.5s) | Train Loss: 0.2117 | Val Loss: 0.3913 | Bone Dice: 0.9586 | Frac Dice: 0.5515
+                                                                      
+Epoch 18/40 (63.7s) | Train Loss: 0.2097 | Val Loss: 0.3879 | Bone Dice: 0.9349 | Frac Dice: 0.5746
+   --> Saved Best Model (Val Fracture Dice: 0.5746)
+                                                                      
+Epoch 19/40 (64.2s) | Train Loss: 0.2112 | Val Loss: 0.4145 | Bone Dice: 0.9451 | Frac Dice: 0.5461
+                                                                      
+Epoch 20/40 (65.3s) | Train Loss: 0.2041 | Val Loss: 0.3854 | Bone Dice: 0.9394 | Frac Dice: 0.5716
+                                                                      
+Epoch 21/40 (63.6s) | Train Loss: 0.1956 | Val Loss: 0.3820 | Bone Dice: 0.9512 | Frac Dice: 0.5614
+                                                                      
+Epoch 22/40 (64.2s) | Train Loss: 0.1861 | Val Loss: 0.3859 | Bone Dice: 0.9418 | Frac Dice: 0.5475
+                                                                      
+Epoch 23/40 (70.9s) | Train Loss: 0.1749 | Val Loss: 0.3829 | Bone Dice: 0.9611 | Frac Dice: 0.5680
+                                                                      
+Epoch 24/40 (76.2s) | Train Loss: 0.1958 | Val Loss: 0.3692 | Bone Dice: 0.9529 | Frac Dice: 0.5658
+                                                                      
+Epoch 25/40 (76.2s) | Train Loss: 0.1864 | Val Loss: 0.3760 | Bone Dice: 0.9509 | Frac Dice: 0.5694
+                                                                      
+Epoch 26/40 (74.6s) | Train Loss: 0.1726 | Val Loss: 0.3771 | Bone Dice: 0.9607 | Frac Dice: 0.5710
+                                                                      
+Epoch 27/40 (73.1s) | Train Loss: 0.1783 | Val Loss: 0.3745 | Bone Dice: 0.9613 | Frac Dice: 0.5714
+                                                                      
+Epoch 28/40 (77.7s) | Train Loss: 0.1802 | Val Loss: 0.3819 | Bone Dice: 0.9488 | Frac Dice: 0.5738
+                                                                      
+Epoch 29/40 (68.2s) | Train Loss: 0.1835 | Val Loss: 0.3835 | Bone Dice: 0.9511 | Frac Dice: 0.5744
+                                                                      
+Epoch 30/40 (69.3s) | Train Loss: 0.1771 | Val Loss: 0.3838 | Bone Dice: 0.9620 | Frac Dice: 0.5679
+                                                                      
+Epoch 31/40 (73.8s) | Train Loss: 0.1802 | Val Loss: 0.3832 | Bone Dice: 0.9521 | Frac Dice: 0.5719
+                                                                      
+Epoch 32/40 (67.3s) | Train Loss: 0.1569 | Val Loss: 0.3775 | Bone Dice: 0.9630 | Frac Dice: 0.5726
+                                                                      
+Epoch 33/40 (69.8s) | Train Loss: 0.1596 | Val Loss: 0.3815 | Bone Dice: 0.9509 | Frac Dice: 0.5745
+                                                                      
+Epoch 34/40 (68.7s) | Train Loss: 0.1600 | Val Loss: 0.3827 | Bone Dice: 0.9589 | Frac Dice: 0.5702
+                                                                      
+Epoch 35/40 (69.5s) | Train Loss: 0.1578 | Val Loss: 0.3748 | Bone Dice: 0.9585 | Frac Dice: 0.5743
+                                                                      
+Epoch 36/40 (68.3s) | Train Loss: 0.1593 | Val Loss: 0.3798 | Bone Dice: 0.9628 | Frac Dice: 0.5717
+                                                                      
+Epoch 37/40 (67.6s) | Train Loss: 0.1614 | Val Loss: 0.3777 | Bone Dice: 0.9574 | Frac Dice: 0.5744
+                                                                      
+Epoch 38/40 (64.3s) | Train Loss: 0.1599 | Val Loss: 0.3779 | Bone Dice: 0.9561 | Frac Dice: 0.5742
+                                                                      
+Epoch 39/40 (65.1s) | Train Loss: 0.1546 | Val Loss: 0.3782 | Bone Dice: 0.9550 | Frac Dice: 0.5742
+                                                                      
+Epoch 40/40 (65.8s) | Train Loss: 0.1593 | Val Loss: 0.3781 | Bone Dice: 0.9475 | Frac Dice: 0.5784
+   --> Saved Best Model (Val Fracture Dice: 0.5784)
+
+[+] Finished 40 epochs in 45.30 minutes!
+Evaluating Hold-Out Test Split (N=216): 100%|██████████| 216/216 [00:15<00:00, 13.54it/s]
+
+======== U-Net++ (EfficientNet-B3 + Deep Supervision) TEST RESULTS ========
+Model                         : U-Net++ (EfficientNet-B3 + Deep Supervision)
+Checkpoint                    : FracAtlas_UNetPP_EfficientNetB3_DeepSup/unetpp_effnetb3_deepsup_best.pt
+Best Epoch                    : 40
+Total Params (M)              : 13.63
+Scan-Level Recall (>0 px)     : 88/108 (81.5%)
+Fracture Macro-Dice           : 0.5067
+Fracture Micro-Dice           : 0.6315
+Fracture Macro-IoU            : 0.4055
+Boundary HD95 (px)            : 169.28
+Bone Anatomy Dice             : 0.9571
+Healthy FP (px/scan)          : 30.5
+Latency (ms/scan)             : 67.5
+===========================================================================
+[+] Saved all outputs inside: FracAtlas_UNetPP_EfficientNetB3_DeepSup/
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+  "pixel_precision": 0.22649556400492618,
+  "pixel_recall": 0.42937805595883016,
+  "pixel_dice": 0.2965578184441951,
+  "pixel_iou": 0.17409326929625515,
+  "pixel_accuracy": 0.9955082734425837,
+  "mean_dice_positive_images": 0.33283880152629197,
+  "mean_iou_positive_images": 0.23599751052984896,
+  "positive_images_evaluated": 72
+}

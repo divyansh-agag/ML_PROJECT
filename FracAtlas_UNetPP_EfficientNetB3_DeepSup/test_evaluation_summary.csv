@@ -1,0 +1,2 @@
+Model,Checkpoint,Best Epoch,Total Params (M),Scan-Level Recall (>0 px),Fracture Macro-Dice,Fracture Micro-Dice,Fracture Macro-IoU,Boundary HD95 (px),Bone Anatomy Dice,Healthy FP (px/scan),Latency (ms/scan)
+U-Net++ (EfficientNet-B3 + Deep Supervision),FracAtlas_UNetPP_EfficientNetB3_DeepSup/unetpp_effnetb3_deepsup_best.pt,40,13.63,88/108 (81.5%),0.5067,0.6315,0.4055,169.28,0.9571,30.5,67.5

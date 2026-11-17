@@ -1,0 +1,4 @@
+Cascade Variant,Stage-1 Recall,Macro-Dice,Micro-Dice,Macro-IoU,HD95 (px),Healthy FP (px),Latency (ms)
+Normal Cascade (1-View Stage 1),81/108 (75.0%),0.4174,0.5355,0.3162,208.65,97.63,81.6
+2-View TTA Cascade (Orig + HFlip),82/108 (75.9%),0.4161,0.5192,0.3135,205.61,64.93,113.7
+4-View TTA Cascade (Orig+Flip+480+544),83/108 (76.9%),0.4371,0.5492,0.3321,197.81,77.87,183.4

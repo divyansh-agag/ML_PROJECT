@@ -1,0 +1,30 @@
+Fusion Family,Configuration,Scan Recall,Macro-Dice,Micro-Dice,Macro-IoU,HD95 (px),Healthy FP (px)
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.20*ROI*MedSAM (t=0.45),84/108 (77.8%),0.5279,0.6475,0.4251,183.42,32.76
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.25*ROI*MedSAM (t=0.50),84/108 (77.8%),0.5275,0.6471,0.4251,183.31,19.67
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.25*ROI*MedSAM (t=0.45),85/108 (78.7%),0.527,0.6474,0.4235,178.74,50.18
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.35, EffNet 0.65)",85/108 (78.7%),0.5268,0.6458,0.4229,179.51,56.7
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.30, EffNet 0.70)",85/108 (78.7%),0.5268,0.646,0.423,179.49,55.44
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.15*ROI*MedSAM (t=0.45),84/108 (77.8%),0.5266,0.6468,0.4238,183.35,22.04
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.25, EffNet 0.75)",85/108 (78.7%),0.5265,0.6461,0.4228,179.45,54.2
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.20, EffNet 0.80)",85/108 (78.7%),0.5262,0.6462,0.4227,179.41,53.08
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.15, EffNet 0.85)",85/108 (78.7%),0.5262,0.6463,0.4227,179.36,51.64
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.20*ROI*MedSAM (t=0.50),84/108 (77.8%),0.5261,0.6462,0.4238,183.3,17.82
+Tri-Model Global+Box Hybrid,0.70*EffNet + 0.30*ResNet + 0.15*ROI*MedSAM (t=0.50),84/108 (77.8%),0.5249,0.6455,0.4226,183.3,16.69
+Pixel Ensemble (No Box),Pixel Blend (0.80*EffNet + 0.20*ResNet | t=0.45),84/108 (77.8%),0.5241,0.6455,0.4213,184.69,19.54
+Pixel Ensemble (No Box),Pixel Blend (0.75*EffNet + 0.25*ResNet | t=0.45),84/108 (77.8%),0.5234,0.6452,0.4207,183.33,18.81
+Pixel Ensemble (No Box),Pixel Blend (0.70*EffNet + 0.30*ResNet | t=0.45),84/108 (77.8%),0.5225,0.6447,0.4199,183.35,18.21
+Pixel Ensemble (No Box),Pixel Blend (0.65*EffNet + 0.35*ResNet | t=0.45),84/108 (77.8%),0.5215,0.6443,0.4189,183.39,17.58
+Pixel Ensemble (No Box),Pixel Blend (0.60*EffNet + 0.40*ResNet | t=0.45),84/108 (77.8%),0.5205,0.6439,0.4181,183.42,17.19
+Single Backbone,EffNet-B3 U-Net++ DeepSup (2V-TTA),86/108 (79.6%),0.5146,0.639,0.4129,171.72,32.87
+Pixel Ensemble (No Box),Pixel Blend (0.80*EffNet + 0.20*ResNet | t=0.50),84/108 (77.8%),0.5134,0.6388,0.4136,184.86,13.21
+Pixel Ensemble (No Box),Pixel Blend (0.75*EffNet + 0.25*ResNet | t=0.50),83/108 (76.9%),0.5129,0.6386,0.4132,191.09,12.69
+Pixel Ensemble (No Box),Pixel Blend (0.70*EffNet + 0.30*ResNet | t=0.50),83/108 (76.9%),0.5119,0.6382,0.4124,189.76,12.27
+Pixel Ensemble (No Box),Pixel Blend (0.65*EffNet + 0.35*ResNet | t=0.50),83/108 (76.9%),0.511,0.6377,0.4116,189.34,11.91
+Pixel Ensemble (No Box),Pixel Blend (0.60*EffNet + 0.40*ResNet | t=0.50),83/108 (76.9%),0.5097,0.637,0.4106,189.27,11.51
+Pixel Ensemble (No Box),Pixel Blend (0.80*EffNet + 0.20*ResNet | t=0.55),82/108 (75.9%),0.5074,0.6337,0.4093,198.21,9.17
+Pixel Ensemble (No Box),Pixel Blend (0.75*EffNet + 0.25*ResNet | t=0.55),82/108 (75.9%),0.5071,0.6335,0.4089,198.25,8.91
+Pixel Ensemble (No Box),Pixel Blend (0.70*EffNet + 0.30*ResNet | t=0.55),82/108 (75.9%),0.5065,0.6333,0.4084,198.28,8.55
+Pixel Ensemble (No Box),Pixel Blend (0.65*EffNet + 0.35*ResNet | t=0.55),82/108 (75.9%),0.5055,0.6328,0.4076,198.3,8.21
+Pixel Ensemble (No Box),Pixel Blend (0.60*EffNet + 0.40*ResNet | t=0.55),82/108 (75.9%),0.5029,0.6315,0.4054,195.68,7.57
+Low-Alpha Box Cascade,"Box Cascade (MedSAM alpha=0.60, EffNet 0.40)",87/108 (80.6%),0.4924,0.5882,0.3785,169.22,98.98
+Single Backbone,ResNet-34 U-Net++ (2V-TTA),85/108 (78.7%),0.4458,0.5702,0.3532,185.6,14.27

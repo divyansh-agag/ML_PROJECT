@@ -1,0 +1,11 @@
+Stage-1 Proposal,Probability Fusion,Macro-Dice,Micro-Dice,Macro-IoU,HD95 (px),Healthy FP (px)
+1-View Stage 1,Hard Stage 2 Only (alpha=1.00),0.4198,0.5384,0.3191,208.41,85.66
+1-View Stage 1,Soft Blend (alpha=0.75),0.4241,0.5447,0.3242,208.22,82.93
+1-View Stage 1,Soft Blend (alpha=0.70),0.4254,0.5467,0.3258,208.18,82.08
+1-View Stage 1,Soft Blend (alpha=0.65),0.4268,0.5488,0.3274,208.14,81.09
+1-View Stage 1,Soft Blend (alpha=0.60),0.4289,0.5517,0.3299,208.11,79.58
+4-View TTA Stage 1,Hard Stage 2 Only (alpha=1.00),0.4394,0.5521,0.3339,197.61,65.42
+4-View TTA Stage 1,Soft Blend (alpha=0.75),0.4441,0.5583,0.3394,197.47,63.38
+4-View TTA Stage 1,Soft Blend (alpha=0.70),0.4454,0.5601,0.3409,197.4,62.64
+4-View TTA Stage 1,Soft Blend (alpha=0.65),0.4472,0.5623,0.3431,197.27,61.82
+4-View TTA Stage 1,Soft Blend (alpha=0.60),0.4495,0.5653,0.3458,197.17,60.75

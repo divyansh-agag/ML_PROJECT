@@ -1,0 +1,24 @@
+\begin{tabular}{llllrrrrr}
+\toprule
+Model & Inference Mode & Total Params & Trainable & Fracture Dice & Fracture IoU & HD95 (px) & Healthy FP (px) & Latency (ms) \\
+\midrule
+U-Net++ (FracAtlas\_UNetPP) & Autonomous (No Box) & 26.08M & 100.00\% & 0.401700 & 0.314900 & 272.140000 & 34.080000 & 40.700000 \\
+U-Net++ (FracAtlas\_UNetPP\_Focal\_Treversky) & Autonomous (No Box) & 26.08M & 100.00\% & 0.429100 & 0.337100 & 207.680000 & 29.600000 & 38.200000 \\
+YOLO (weights/best.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.169600 & 0.134700 & 553.930000 & 0.000000 & 7.900000 \\
+YOLO (weights/last.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.167000 & 0.134800 & 559.790000 & 12.060000 & 7.400000 \\
+YOLO (weights/best.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.295900 & 0.236300 & 427.810000 & 16.190000 & 7.900000 \\
+YOLO (weights/epoch0.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.101700 & 0.080200 & 619.220000 & 13.120000 & 8.200000 \\
+YOLO (weights/epoch10.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.164000 & 0.129300 & 556.410000 & 31.170000 & 8.400000 \\
+YOLO (weights/epoch15.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.148700 & 0.119200 & 562.470000 & 17.560000 & 8.300000 \\
+YOLO (weights/epoch20.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.217600 & 0.173300 & 509.600000 & 9.170000 & 8.400000 \\
+YOLO (weights/epoch25.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.252600 & 0.197600 & 455.230000 & 16.740000 & 8.300000 \\
+YOLO (weights/epoch5.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.070300 & 0.057400 & 658.130000 & 11.310000 & 8.300000 \\
+YOLO (weights/last.pt) & Autonomous YOLO-Seg & 11.79M & 100.00\% & 0.295900 & 0.236300 & 427.810000 & 16.190000 & 8.400000 \\
+Zero-Shot MedSAM (Full) & Autonomous Full Box & 93.74M & 0.00\% & 0.008400 & 0.004200 & 323.120000 & 225255.710000 & 281.500000 \\
+Zero-Shot MedSAM (Oracle) & Oracle GT Box Prompt & 93.74M & 0.00\% & 0.681000 & 0.526800 & 9.580000 & 225071.730000 & 286.400000 \\
+MedSAM + LoRA (Full Box) & Autonomous Full Box & 91.68M & 4.75\% & 0.000000 & 0.000000 & 724.080000 & 0.000000 & 50.200000 \\
+U-Net++ -> MedSAM-LoRA & Autonomous Cascade & 91.68M & 4.75\% & 0.381200 & 0.277500 & 211.380000 & 128.370000 & 60.200000 \\
+YOLO -> MedSAM-LoRA & Autonomous Cascade & 91.68M & 4.75\% & 0.055300 & 0.039800 & 602.080000 & 649.970000 & 61.000000 \\
+MedSAM + LoRA (Oracle) & Oracle GT Box Prompt & 91.68M & 4.75\% & 0.694100 & 0.543800 & 11.610000 & 0.000000 & 49.600000 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,18 @@
+Stage-1 Proposal Source,Probability Fusion,Stage-1 Recall,Macro-Dice,Micro-Dice,Macro-IoU,HD95 (px),Healthy FP (px)
+1-View U-Net++ Only,Hard Stage 2 Only (a=1.00),81/108 (75.0%),0.4198,0.5384,0.3191,208.41,85.66
+1-View U-Net++ Only,Soft Fusion (a=0.75),81/108 (75.0%),0.4241,0.5447,0.3242,208.22,82.93
+1-View U-Net++ Only,Soft Fusion (a=0.65),81/108 (75.0%),0.4268,0.5488,0.3274,208.14,81.09
+1-View U-Net++ Only,Soft Fusion (a=0.60),81/108 (75.0%),0.4289,0.5517,0.3299,208.11,79.58
+4-View TTA U-Net++ Only,Hard Stage 2 Only (a=1.00),83/108 (76.9%),0.4394,0.5521,0.3339,197.61,65.42
+4-View TTA U-Net++ Only,Soft Fusion (a=0.75),83/108 (76.9%),0.4441,0.5583,0.3394,197.47,63.38
+4-View TTA U-Net++ Only,Soft Fusion (a=0.65),83/108 (76.9%),0.4472,0.5623,0.3431,197.27,61.82
+4-View TTA U-Net++ Only,Soft Fusion (a=0.60),83/108 (76.9%),0.4495,0.5653,0.3458,197.17,60.75
+YOLOv8s Detector Only,Hard Stage 2 Only (a=1.00),34/108 (31.5%),0.2037,0.3277,0.1569,504.24,14.89
+Ensemble: U-Net++ (1V) U YOLOv8s,Hard Stage 2 Only (a=1.00),83/108 (76.9%),0.4258,0.5359,0.3221,195.95,100.55
+Ensemble: U-Net++ (1V) U YOLOv8s,Soft Fusion (a=0.75),83/108 (76.9%),0.4303,0.5424,0.3275,195.74,97.16
+Ensemble: U-Net++ (1V) U YOLOv8s,Soft Fusion (a=0.65),83/108 (76.9%),0.4333,0.5465,0.331,195.66,94.89
+Ensemble: U-Net++ (1V) U YOLOv8s,Soft Fusion (a=0.60),83/108 (76.9%),0.4355,0.5495,0.3336,195.6,92.98
+Ensemble: U-Net++ (4V-TTA) U YOLOv8s,Hard Stage 2 Only (a=1.00),85/108 (78.7%),0.4449,0.5501,0.3379,185.02,80.31
+Ensemble: U-Net++ (4V-TTA) U YOLOv8s,Soft Fusion (a=0.75),85/108 (78.7%),0.4498,0.5565,0.3436,184.88,77.62
+Ensemble: U-Net++ (4V-TTA) U YOLOv8s,Soft Fusion (a=0.65),85/108 (78.7%),0.453,0.5605,0.3474,184.67,75.62
+Ensemble: U-Net++ (4V-TTA) U YOLOv8s,Soft Fusion (a=0.60),85/108 (78.7%),0.4554,0.5635,0.3502,184.55,74.15
